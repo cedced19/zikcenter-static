@@ -1,6 +1,6 @@
 {
-  "name": "zikcenter",
-  "version": "0.1.9",
+  "name": "zikcenter-static",
+  "version": "0.0.0",
   "description": "A static software to broadcast music",
   "main": "zikcenter.js",
   "repository": {
@@ -46,4 +46,3 @@
     }
   ]
 }
-
