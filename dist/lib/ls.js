@@ -15,7 +15,8 @@ var getUnShiny = function (name) {
     name = name.toLowerCase();
     name = name.replace(/ /g, '-');
     name = name.replace(/_/g, '-');
-   
+    name = name.replace(/ã©/g, 'é');
+    name = name.replace(/ã§/g, 'ç');
     return name;
 };
 module.exports = function (root) {
