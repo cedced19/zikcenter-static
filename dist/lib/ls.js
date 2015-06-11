@@ -30,7 +30,7 @@ module.exports = function (root) {
             if (stat.isDirectory() && entry != 'node_modules') {
                 queue.push(join(d, entry));
             } else {
-                if (/.mp3/.test(entry)) {
+                if (/.mp3/i.test(entry)) {
                     var filename = getUnShiny(entry);
                     fs.renameSync(f, join(root, d, filename));
                     if (d == '/') {
