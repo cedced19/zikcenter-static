@@ -4,17 +4,17 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
     uncss = require('gulp-uncss'),
     minifyCss = require('gulp-minify-css'),
     htmlmin = require('gulp-htmlmin');
 
-
-gulp.task('copy', function() {
+gulp.task('copy', function () {
     gulp.src(['favicon.ico', 'data-generator.js', 'package.json'])
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy-server-lib', function() {
+gulp.task('copy-server-lib', function () {
     gulp.src('lib/*.js')
         .pipe(gulp.dest('dist/lib'));
 });
@@ -33,15 +33,16 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', ['html'], function () {
-    return gulp.src('dist/vendor/styles.css')
+    return gulp.src('vendor/css/*.css')
+        .pipe(concat('styles.css'))
         .pipe(uncss({
-            html: ['dist/index.html']
+            html: ['index.html']
         }))
-        .pipe(autoprefixer({ 
-            browsers: ['last 2 versions', 'ie 8', 'ie 9'] 
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'ie 8', 'ie 9']
         }))
         .pipe(minifyCss())
-        .pipe(gulp.dest('dist/vendor/'));
+        .pipe(gulp.dest('dist/vendor/css'));
 });
 
 gulp.task('default', ['css', 'copy-server-lib', 'copy']);

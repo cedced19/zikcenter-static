@@ -1,44 +1,45 @@
 {
-    "name": "zikcenter-static",
-    "version": "0.0.0",
-    "description": "A static software to broadcast music",
-    "main": "zikcenter.js",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/cedced19/zikcenter-static"
-    },
-    "keywords": [
-        "musics",
-        "music",
-        "cli",
-        "basic",
-        "center",
-        "random"
-    ],
-    "bugs": {
-        "url": "https://github.com/cedced19/zikcenter-static/issues"
-    },
-    "homepage": "https://github.com/cedced19/zikcenter-static",
-    "devDependencies": {
-        "gulp": "^3.8.10",
-        "gulp-htmlmin": "^1.1.1",
-        "gulp-if": "^1.2.5",
-        "gulp-minify-css": "^1.1.1",
-        "gulp-uglify": "^1.2.0",
-        "gulp-uncss": "^1.0.1",
-        "gulp-useref": "^1.1.2",
-        "gulp-util": "^3.0.2",
-        "gulp-autoprefixer": "^2.3.1"
-    },
-    "author": {
-        "name": "Cédric",
-        "email": "cedced19@gmail.com",
-        "url": "https://github.com/cedced19"
-    },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://cedced19.github.io/license/"
-        }
-    ]
+  "name": "zikcenter-static",
+  "version": "0.0.0",
+  "description": "A static software to broadcast music",
+  "main": "zikcenter.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cedced19/zikcenter-static"
+  },
+  "keywords": [
+    "musics",
+    "music",
+    "cli",
+    "basic",
+    "center",
+    "random"
+  ],
+  "bugs": {
+    "url": "https://github.com/cedced19/zikcenter-static/issues"
+  },
+  "homepage": "https://github.com/cedced19/zikcenter-static",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-htmlmin": "^1.1.1",
+    "gulp-if": "^1.2.5",
+    "gulp-minify-css": "^1.1.1",
+    "gulp-uglify": "^1.2.0",
+    "gulp-uncss": "^1.0.1",
+    "gulp-useref": "^1.1.2",
+    "gulp-util": "^3.0.2"
+  },
+  "author": {
+    "name": "Cédric",
+    "email": "cedced19@gmail.com",
+    "url": "https://github.com/cedced19"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://cedced19.github.io/license/"
+    }
+  ]
 }
