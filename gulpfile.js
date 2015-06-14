@@ -25,7 +25,6 @@ gulp.task('html', function () {
     return gulp.src('index.html')
         .pipe(assets)
         .pipe(gulpif('*.js', uglify()))
-        .pipe(gulpif('*.css', minifyCss()))
         .pipe(assets.restore())
         .pipe(useref())
         .pipe(gulpif('*.html', htmlmin({collapseWhitespace: true})))
