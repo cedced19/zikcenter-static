@@ -3,9 +3,8 @@
 A static software to play random music.
 
 [![Build Status](https://travis-ci.org/cedced19/zikcenter-static.svg)](https://travis-ci.org/cedced19/zikcenter-static)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
- ![](https://raw.githubusercontent.com/cedced19/zikcenter-static/master/demo.png)
+ ![Demo](https://raw.githubusercontent.com/cedced19/zikcenter-static/master/demo.png)
 
 
 ## Installation
