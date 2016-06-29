@@ -6,32 +6,35 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     uncss = require('gulp-uncss'),
+    pump = require('pump'),
     minifyCss = require('gulp-minify-css'),
     htmlmin = require('gulp-htmlmin');
 
-gulp.task('copy', function () {
-    gulp.src(['favicon.ico', 'data-generator.js', 'package.json'])
+gulp.task('favicon', function () {
+    gulp.src(['favicon.ico'])
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy-server-lib', function () {
-    gulp.src('lib/*.js')
-        .pipe(gulp.dest('dist/lib'));
-});
-
 gulp.task('html', function () {
-    var assets = useref.assets();
 
     return gulp.src('index.html')
-        .pipe(assets)
-        .pipe(gulpif('*.js', uglify()))
-        .pipe(assets.restore())
         .pipe(useref())
         .pipe(gulpif('*.html', htmlmin({collapseWhitespace: true})))
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('css', ['html'], function () {
+gulp.task('js', function (cb) {
+  pump([
+        gulp.src(['vendor/js/angular.min.js', 'vendor/js/angular-media-player.min.js', 'vendor/js/app.js']),
+        uglify(),
+        concat('scripts.js'),
+        gulp.dest('dist/vendor/js')
+    ],
+    cb
+  );
+});
+
+gulp.task('css', function () {
     return gulp.src('vendor/css/*.css')
         .pipe(concat('styles.css'))
         .pipe(uncss({
@@ -44,4 +47,4 @@ gulp.task('css', ['html'], function () {
         .pipe(gulp.dest('dist/vendor/css'));
 });
 
-gulp.task('default', ['css', 'copy-server-lib', 'copy']);
+gulp.task('default', ['css', 'favicon', 'html', 'js']);

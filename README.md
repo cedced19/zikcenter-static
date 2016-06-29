@@ -4,23 +4,29 @@ A static software to play random music.
 
 [![Build Status](https://travis-ci.org/cedced19/zikcenter-static.svg)](https://travis-ci.org/cedced19/zikcenter-static)
 
- ![Demo](https://raw.githubusercontent.com/cedced19/zikcenter-static/master/demo.png)
+![Demo](https://raw.githubusercontent.com/cedced19/zikcenter-static/master/demo.png)
 
 
 ## Installation
 
-__Required:__ Node.js (or io.js), and git 
+__Required:__ Node.js, and git
 
 ```bash
 $ git clone --depth=1 --branch=master https://github.com/cedced19/zikcenter-static
+$ npm install
+$ npm start
 ```
 
-Move content of `/dist/` anywere and go there.
+Host all the `/dist/` and the `/musics/` folders in Nginx, Apache or other http server.
 
-You can place your musics anywhere in there. 
-
-```bash
-$ node data-generator.js 
+It should be like this:
 ```
-
-Host all the folder in Nginx, Apache or other http server.
+├── index.html
+├── favicon.ico
+├── musics
+└─┬ vendor
+  ├─┬ css
+  │ └── styles.css
+  └─┬ js
+    └── scripts.js
+```
